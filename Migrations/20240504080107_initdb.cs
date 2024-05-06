@@ -38,7 +38,7 @@ namespace Razorweb.Migrations
                 }
             );
 
-            Randomizer.Seed = new Random();
+            Randomizer.Seed = new Random(8675309);
             var fakerArticles = new Faker<Article>();
             fakerArticles.RuleFor(a => a.Tittle, f => f.Lorem.Sentence(5, 5));
             fakerArticles.RuleFor(a => a.Created, f => f.Date.Between(new DateTime(2024, 1, 1), new DateTime(2024, 5, 5)));

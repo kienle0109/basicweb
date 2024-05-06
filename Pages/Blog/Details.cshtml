@@ -1,0 +1,16 @@
+@page "xemblog/{id:int}"
+@model Razorweb.Pages_Blog.DetailsModel
+
+@{
+    ViewData["Title"] = @Model.Article.Tittle;
+}
+
+<h1>@Model.Article.Tittle</h1>
+<p><i>@Html.DisplayFor(model => model.Article.Created)</i></p>
+<hr>
+@Html.DisplayFor(model => model.Article.Content)
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Article.Id">Sua</a> |
+    <a asp-page="./Index">Danh sach bai viet</a>
+</div>
