@@ -33,7 +33,7 @@ public class Program
             // Sử dụng MS SQL Server
             options.UseSqlServer(connectstring);
         });
-        
+
         // Truy cập IdentityOptions
         builder.Services.Configure<IdentityOptions>(options =>
         {
@@ -58,7 +58,14 @@ public class Program
             // Cấu hình đăng nhập.
             options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
             options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
+            options.SignIn.RequireConfirmedAccount = true;
 
+        });
+
+        builder.Services.ConfigureApplicationCookie(options => {
+            options.LoginPath = "/login";
+            options.LogoutPath = "/logout";
+            options.AccessDeniedPath = "/pagedenied";
         });
 
         builder.Services.AddOptions();                                        // Kích hoạt Options
