@@ -113,6 +113,10 @@ namespace Razorweb.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            // foreach (var provider in ExternalLogins) {
+            //     _logger.LogInformation(provider.Name);
+            // }
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -123,7 +127,7 @@ namespace Razorweb.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 

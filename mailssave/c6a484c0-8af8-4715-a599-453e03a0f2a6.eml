@@ -1,0 +1,10 @@
+From: Kien <kienle20034@gmail.com>
+Date: Mon, 13 May 2024 01:24:26 +0700
+Subject: Confirm your email
+Message-Id: <O60A02TD1NU4.PQJED82HTDDN1@trongkien>
+Sender: Kien <kienle20034@gmail.com>
+To: abc@gmail.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Please confirm your account by <a href='http://localhost:5118/Identity/Account/ConfirmEmail?userId=a5eb3432-5577-4b6a-a7ec-275da1231098&amp;code=Q2ZESjhPN2o3MnVSNFJaRGlWYWRYVlEwMEpRWVVkQUlQZFlNTmErSlo5TkhBMnZGUDFrOGsyZnFQWUdUc3ZwMEp4dU1tRVJVRVFGOE5xdnJQQmdJNHc5SmE2YVI3cW9TR3RnSWZ4alBwNkcvVCtGM3loOUFFc0xVS2hac3JBWmJ4ajcyMlVDcWxNdmd5Z2FXM2VJZVM2RkFGVmdPakpxVXk4bDM4cyttaWZkSkovaEhVaFN6ellrZS8xYzR3VVV1aVhtbHZHRVZnb2FQLysvQWErWE00cWRXcWx1NHVZY3Z6cTRKZTRpNFRQTFVEVElxUDRCamxBZEo5MmRqMVJlbVo2dEtadz09&amp;returnUrl=%2F'>clicking here</a>.

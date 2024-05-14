@@ -62,11 +62,28 @@ public class Program
 
         });
 
-        builder.Services.ConfigureApplicationCookie(options => {
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
             options.LoginPath = "/login";
             options.LogoutPath = "/logout";
             options.AccessDeniedPath = "/pagedenied";
         });
+
+        builder.Services.AddAuthentication()
+                        .AddGoogle(options =>
+                        {
+                            var gconfig = builder.Configuration.GetSection("Authentication:Google");
+                            options.ClientId = gconfig["ClientID"];
+                            options.ClientSecret = gconfig["ClientSecret"];
+                            options.CallbackPath = "/dang-nhap-tu-google";
+                        })
+                        .AddFacebook(options =>
+                        {
+                            var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
+                            options.ClientId = fconfig["AppID"];
+                            options.ClientSecret = fconfig["AppSecret"];
+                            options.CallbackPath = "/dang-nhap-tu-facebook";
+                        });
 
         builder.Services.AddOptions();                                        // Kích hoạt Options
         var mailsettings = builder.Configuration.GetSection("MailSettings");  // đọc config
