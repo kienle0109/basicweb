@@ -16,13 +16,6 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        //Doc chuoi ket noi
-        builder.Services.AddDbContext<MyBlogContext>(options =>
-        {
-            string connectString = builder.Configuration.GetConnectionString("MyBlogContext");
-            options.UseSqlServer(connectString);
-        });
-
         builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<MyBlogContext>();
 
         // Đăng ký AppDbContext
@@ -33,6 +26,8 @@ public class Program
             // Sử dụng MS SQL Server
             options.UseSqlServer(connectstring);
         });
+
+        builder.Services.AddTransient<MyBlogContext>();
 
         // Truy cập IdentityOptions
         builder.Services.Configure<IdentityOptions>(options =>

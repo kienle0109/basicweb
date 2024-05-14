@@ -8,5 +8,7 @@ namespace razorweb.models
         [Column(TypeName="nvarchar")]
         [StringLength(400)]
         public string? HomeAddress {set; get;}
+        [DataType(DataType.Date)]
+        public DateTime? BirthDate {set; get;}
     }
 }
