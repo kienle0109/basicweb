@@ -2,17 +2,79 @@
 @model IndexModel
 @using razorweb.models
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Trang chủ";
     var posts = ViewData["posts"] as List<Article>;
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-<ol>
-    @foreach (var post in posts) {
-        <li>@post.Tittle</li>
+<style>
+    .custom-img-height {
+        width: 100%;
+        height: 400px;
     }
-</ol>
+
+    .limited-height-p {
+        max-height: 50px;
+        /* Đặt giới hạn chiều cao */
+        overflow: hidden;
+        /* Ẩn phần dư thừa */
+        text-overflow: ellipsis;
+        /* Hiển thị dấu '...' khi nội dung bị cắt */
+    }
+</style>
+
+
+<img class="img-fluid container custom-img-height"
+    src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/376337/910/642/m2/fpnw/wm1/ygpwljayrhob6lyeag3dcfg2sijnxuk3nw5gvnrqeb9bnz0z8jdpxs00bbsagg97-.jpg?1424951984&s=21a14623eba91ec5c7fc2c399288ed29"
+    alt="">
+
+<hr>
+
+<div class="card-group m-2">
+    <div class="card">
+        <img src="https://assets.codepen.io/6093409/mountains-1.jpg" alt="a snow-capped mountain range" />
+        <div class="card-body">
+            <a class="h2 text-decoration-none text-dark" asp-page="/Blog/Details" asp-route-id="4">Tieu de</a>
+            @{
+                foreach (var post in posts)
+                {
+                    if (post.Id == 4)
+                    {
+                        <p class="limited-height-p">@post.Content</p>
+                    }
+                }
+            }
+            <a class="btn btn-secondary" asp-page="/Blog/Details" asp-route-id="4">Xem chi tiết</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://assets.codepen.io/6093409/mountains-1.jpg" alt="a snow-capped mountain range" />
+        <div class="card-body">
+            <a class="h2 text-decoration-none text-dark" asp-page="/Blog/Details" asp-route-id="4">Tieu de</a>
+            @{
+                foreach (var post in posts)
+                {
+                    if (post.Id == 4)
+                    {
+                        <p class="limited-height-p">@post.Content</p>
+                    }
+                }
+            }
+            <a class="btn btn-secondary" asp-page="/Blog/Details" asp-route-id="4">Xem chi tiết</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://assets.codepen.io/6093409/mountains-1.jpg" alt="a snow-capped mountain range" />
+        <div class="card-body">
+            <a class="h2 text-decoration-none text-dark" asp-page="/Blog/Details" asp-route-id="4">Tieu de</a>
+            @{
+                foreach (var post in posts)
+                {
+                    if (post.Id == 4)
+                    {
+                        <p class="limited-height-p">@post.Content</p>
+                    }
+                }
+            }
+            <a class="btn btn-secondary" asp-page="/Blog/Details" asp-route-id="4">Xem chi tiết</a>
+        </div>
+    </div>
+</div>
